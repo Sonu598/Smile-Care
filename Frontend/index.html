@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./styles/index.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("./pages/navbar.html");
+      });
+    </script>
+    <!--end of Navigation bar-->
+
+    <div class="banner-container">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <!-- <div class="swiper-slide">
+            <img src="./images/banner0.png" alt="" />
+          </div> -->
+          <div class="swiper-slide">
+            <img src="./images/banner2.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/banner1.png" alt="" />
+          </div>
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div class="sec1">
+      <div class="sec1-card">
+        <img
+          src="https://bhardwajdentalclinic.com/wp-content/uploads/2023/04/bdc-200-%C3%97-200-px-60-%C3%97-60-px.png"
+          alt=""
+        />
+        <h3>Orthodontic Treatment</h3>
+        <p>
+          Straighten your smile with braces and aligners. Our personalized plans
+          fix misalignments, gaps, and bite issues, improving oral health and
+          boosting confidence.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="sec1-card">
+        <img
+          src="https://bhardwajdentalclinic.com/wp-content/uploads/2023/01/035-microscope.png"
+          alt=""
+        />
+        <h3>Microscopic Root Canal (Painless)</h3>
+        <p>
+          Advanced, precise care for infected teeth. Our skilled endodontists
+          use high-powered microscopes to remove the infection, relieve pain,
+          and preserve your natural tooth.
+        </p>
+        <button>Read More</button>
+      </div>
+      <div class="sec1-card">
+        <img
+          src="https://bhardwajdentalclinic.com/wp-content/uploads/2023/04/2.svg"
+          alt=""
+        />
+        <h3>Dental Implants</h3>
+        <p>
+          Restore missing teeth and improve your oral health with dental implant
+          treatments, which can provide a permanent and natural-looking
+          solution.
+        </p>
+        <button>Read More</button>
+      </div>
+    </div>
+
+    <div class="sec2">
+      <div id="sec2-text">
+        <h2>Ready to show off your perfect smile?</h2>
+        <button id="bookBtn">Book Appointment</button>
+      </div>
+    </div>
+    <div class="sec3">
+      <h2 class="sec-title">Meet Our Doctors</h2>
+      <div class="sec3-card">
+        <div>
+          <img
+            src="https://bhardwajdentalclinic.com/wp-content/uploads/elementor/thumbs/Dr-Amit-Bhardwaj-q0jxj7jmv1fgaaiaqzvakz6wqs2aimk7bbfyrg2cy4.jpg"
+            alt=""
+          />
+          <h2>Dr. Amit Bhardwaj</h2>
+          <p>Consulting Orthodontic</p>
+          <button>Read More</button>
+        </div>
+        <div>
+          <img
+            src="https://bhardwajdentalclinic.com/wp-content/uploads/elementor/thumbs/Dr-Anuj-Bhardwaj-q0jxj5nyhdcvn2l11z21fznzk0bk38cqn24zsw55ak.jpg"
+            alt=""
+          />
+          <h2>Dr-Anuj-Bhardwaj</h2>
+          <p>Consulting Orthodontic</p>
+          <button>Read More</button>
+        </div>
+        <div>
+          <img
+            src="https://bhardwajdentalclinic.com/wp-content/uploads/elementor/thumbs/Dr.-Shivani-Bhardwaj-q2yukm5lqmhx2krrp3c8nsv2vr72fi0iab7fxplkwc.jpg"
+            alt=""
+          />
+          <h2>Dr.-Shivani-Bhardwaj</h2>
+          <p>Consulting Orthodontic</p>
+          <button>Read More</button>
+        </div>
+        <div>
+          <img
+            src="https://bhardwajdentalclinic.com/wp-content/uploads/elementor/thumbs/Dr-Kratika-Bhardwaj-q0jxj00xcd55pet7ywma1137zp3ct1qcma82x8dibw.jpg"
+            alt=""
+          />
+          <h2>Dr-Kratika-Bhardwaj</h2>
+          <p>Consulting Orthodontic</p>
+          <button>Read More</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec4">
+      <h2 class="sec-title">
+        Choose <span>Smile Care</span> for Best Dental Treatment
+      </h2>
+      <div class="sec4-card">
+        <div>
+          <ul>
+            <li>Best Online Services</li>
+            <li>World class technology</li>
+            <li>Strict Hygine protocols followed</li>
+            <li>Zero waiting time</li>
+            <li>Kind & friendly team of professionals</li>
+            <li>Team of Well qualified Doctors</li>
+            <li>Quick response time</li>
+          </ul>
+        </div>
+        <div>
+          <img
+            src="https://bhardwajdentalclinic.com/wp-content/uploads/2023/02/Untitled-design-2021-09-20T171554.214.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+       <!--Footer-->
+       <div id="foot-placeholder"></div>
+
+       <script>
+         $(function () {
+           $("#foot-placeholder").load("./pages/footer.html");
+         });
+       </script>
+       <!--Footer End-->
+  </body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="./scripts/index.js"></script>
