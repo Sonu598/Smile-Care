@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-page</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+<style>
+/* **************Navbar CSS************** */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(250, 240, 227);
+}
+
+#navbar {
+    width: 100%;
+    position: sticky;
+    height: 90px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #38b6ff;
+}
+
+#navbar>div a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+#navbar>div>a:hover {
+    color: darkred;
+    font-weight: bold;
+}
+
+/* **************Navbar CSS************** */
+
+/* **************Responsive CSS************** */
+@media only screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
+    #navbar>div a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    /* Adjust font size and line height for even smaller screens */
+    #navbar>div a {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* Reduce logo size for smaller screens */
+    #navbar>div:first-child a img {
+        width: 100px;
+        height: 50px;
+    }
+}
+/* **************Responsive CSS************** */
+</style>
+
+</head>
+<body>
+    <!-- ************Navbar start here****************** -->
+    <div id="navbar">
+        <div><a href="#"><img style="width: 160px; height: 75px;" src="../images/logo.jpg" alt=""></a></div>
+        <div><a href="#">About Us</a></div>
+        <div><a href="#">Our Doctors</a></div>
+        <div><a href="#">Appointments</a></div>
+        <div class="bt"><a href="#">Login</a></div>
+    </div>
+    <!-- **************Navbar end here****************** -->
+</body>
+</html>
