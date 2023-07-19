@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Info</title>
+    <link rel="stylesheet" href="/Frontend/styles/doc_profile.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/smart_tutor_image_3.jpg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/b471923b50.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    
+    <div class="container">
+      <section class="userProfile card">
+        <div class="profile">
+          <figure><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSQOcriAwatQ5A4RyvdeT8utbdPVN3oNQVl3R1Uwi8lqFsxsIhj" alt="profile" "id="pic"" /></figure>
+        </div>
+      </section>
+
+      <section class="work_skills card">
+        <div id="bacsic-btns">
+          <h1>Basic Info :</h1>
+        </div>
+        <div id="basic-lists">
+          <ul>
+      <li>
+        <b>Specialization:</b>
+        <span>Cardiology</span>
+      </li>
+      <li>
+        <b>Education:</b>
+        <span>Medical School Name</span>
+      </li>
+      <li>
+        <b>Experience:</b>
+        <span>10 years</span>
+      </li>
+      <li>
+        <b>Practice:</b>
+        <span>ABC Clinic</span>
+      </li>
+      <li>
+        <b>Address:</b>
+        <span>123 Main Street, City, State</span>
+      </li>
+      <li>
+        <b>Contact:</b>
+        <span>(123) 456-7890</span>
+      </li>
+      <li>
+        <b>Website:</b>
+        <span><a href="https://www.example.com">www.example.com</a></span>
+      </li>
+      <li>
+        <b>Languages:</b>
+        <span>English, Spanish</span>
+      </li>
+      <li>
+        <b>Insurance:</b>
+        <span>Accepts Blue Cross Blue Shield, Medicare</span>
+      </li>
+      <li>
+        <b>Availability:</b>
+        <span>Monday-Friday, 9:00 AM - 5:00 PM</span>
+      </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="userDetails card">
+        <div class="userName">
+          <input type="text" class="name" value="Dr Spidy" readonly />
+          <input type="text" class="pp" value="MBBS" readonly />
+        </div>
+
+        <div class="rank">
+          <h1 class="heading">Rankings</h1>
+          <span>8,6</span>
+          <div class="rating">
+            <i class="fa-solid fa-star rate"></i>
+            <i class="fa-solid fa-star rate"></i>
+            <i class="fa-solid fa-star rate"></i>
+            <i class="fa-solid fa-star-half-stroke rate"></i>
+            <i class="fa-regular fa-star rate underrate"></i>
+          </div>
+        </div>
+
+        <div class="btns">
+          <ul>
+            <li class="sendMsg active">
+              <!-- <a href="#">Send Message</a> -->
+              <button id="send-message-btn">Send Message</button>
+            </li>
+
+            <li class="sendMsg active">
+              <!-- <a href="#">Schedule_meet</a> -->
+              <button id="schedule-meet-btn">Schedule_meet</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== ===== Timeline & About Sections ===== ===== -->
+      <section class="timeline_about card">
+        <div class="tabs">
+          <ul>
+            <li class="about active" id="abut">
+              <span>About</span>
+            </li>
+
+            <li class="about" id="skil">
+              <span>Skills</span>
+            </li>
+
+            <li class="timeline" id="line">
+              <span>Contacts</span>
+            </li>
+
+            <li class="timeline" id="exp">
+              <span>Experience</span>
+            </li>
+          </ul>
+        </div>
+
+        <div id="about_s" class="b">
+          <div class="contact_Info" style="padding-left: 10px">
+            <p id="disc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint et
+              eligendi laborum magni, quod earum? Veritatis, m axime voluptates
+              ducimus officiis eius ratione beatae animi provident magni quidem
+              temporibus quaerat eligendi.
+            </p>
+            <br />
+            <div class="basic_info" style="padding-left: 10px">
+              <h1 class="heading">Basic Information</h1>
+              <ul>
+                <li class="birthday">
+                  <h1 class="label">Birthday:</h1>
+                  <input type="date" value="Amit@gmail.com" readonly />
+                </li>
+
+                <li class="sex">
+                  <h1 class="label">Gender:</h1>
+                  <input type="text" class="gender" value="Male" readonly />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="contact_s" class="a">
+          <h1 class="heading">Contact Information</h1>
+          <ul>
+            <li class="phone">
+              <h1 class="label">Phone:</h1>
+              <input type="number" class="p" value="453262627" readonly />
+            </li>
+
+            <li class="address">
+              <h1 class="label">Address:</h1>
+              <input type="text" id="addr" value="Amit@gmail.com" readonly />
+            </li>
+
+            <li class="email">
+              <h1 class="label">E-mail:</h1>
+              <input
+                type="text"
+                class="p"
+                id="mai"
+                value="Amit@gmail.com"
+                readonly
+              />
+            </li>
+
+            <li>
+              <h1 class="label">Location:</h1>
+            </li>
+
+            <div class="map">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" class="loc" value="Bhilai,CG" readonly />
+              <span id="co"></span>
+            </div>
+          </ul>
+        </div>
+
+        <!-- ===== ===== Skills Contaienr ===== ===== -->
+        <!-- <div id="skils" class="a work_skills card">
+          <h1 class="heading">Skills</h1>
+          <ul>
+            <li>Android</li>
+            <li>Web-Design</li>
+            <li>UI/UX</li>
+            <li>Video Editing</li>
+          </ul>
+        </div> -->
+
+        <!-- ===== ===== Work Contaienr ===== ===== -->
+
+        <div id="EXP" class="a card work_skills">
+          <div class="work">
+            <h1 class="heading">work</h1>
+            <div class="primary">
+              <h1>Spotify New York</h1>
+              <span>Primary</span>
+              <p>
+                170 William Street <br />
+                New York, NY 10038-212-315-51
+              </p>
+            </div>
+
+            <div class="secondary">
+              <h1>
+                Metropolitan <br />
+                Museum
+              </h1>
+              <span>Secondary</span>
+              <p>
+                S34 E 65th Street <br />
+                New York, NY 10651-78 156-187-60
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+  </body>
+</html>
+<script src="/Frontend/scripts/doc_profile.js"></script>
