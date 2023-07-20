@@ -12,17 +12,15 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
   <body>
-
-    <!--Navigation bar-->
-    <div id="nav-placeholder"></div>
-
-    <script>
-      $(function () {
-        $("#nav-placeholder").load("./pages/navbar.html");
-      });
-    </script>
-    <!--end of Navigation bar-->
-
+    <div id="navbar">
+      <div><a href="#"><img id="logo" src="./images/logo.jpg" alt=""></a></div>
+      
+      <div class="nav-element"><a href="#">About Us</a></div>
+      <div class="nav-element"><a href="#">Our Doctors</a></div>
+      <div class="nav-element"><a href="#">Appointments</a></div>
+      <div class="nav-element"><a href="#"><button id="loginBtn">Login</button></a></div>
+      <div id="hamburger"><ion-icon name="menu"></ion-icon></div>
+  </div> 
     <div class="banner-container">
       <div class="swiper">
         <!-- Additional required wrapper -->
@@ -32,10 +30,13 @@
             <img src="./images/banner0.png" alt="" />
           </div> -->
           <div class="swiper-slide">
+            <img src="./images/banner1.png" alt="" />
+          </div>
+          <div class="swiper-slide">
             <img src="./images/banner2.png" alt="" />
           </div>
           <div class="swiper-slide">
-            <img src="./images/banner1.png" alt="" />
+            <img src="./images/banner3.png" alt="" />
           </div>
           ...
         </div>
@@ -163,17 +164,23 @@
       </div>
     </div>
 
-       <!--Footer-->
-       <div id="foot-placeholder"></div>
-
-       <script>
-         $(function () {
-           $("#foot-placeholder").load("./pages/footer.html");
-         });
-       </script>
-       <!--Footer End-->
+    <footer></footer>
   </body>
 </html>
-
+<!-- swiper script -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- index.js file -->
 <script src="./scripts/index.js"></script>
+<!-- header script -->
+<script>
+  $(function () {
+      $('header').load('./pages/navbar.html');
+  }) 
+</script>
+<!-- footer script -->
+<script>
+  $(function () {
+      $('footer').load('./pages/footer.html');
+  }) 
+</script>
