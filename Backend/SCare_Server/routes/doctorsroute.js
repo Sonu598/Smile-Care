@@ -1,12 +1,13 @@
-let express=require("express");
-let doctorRouter=express.Router();
-const { registerLogic, loginLogic } = require('../controllers/authenticate');
-const UserModel = require('../models/usermodel');
+const express=require("express");
+const bcrypt=require('bcrypt');
+const jwt=require('jsonwebtoken')
+const doctorRouter=express.Router();
+const DoctorModel = require('../models/doctormodel');
 
 
-doctorRouter.get("/allDocotor", async (req,res)=>{
+doctorRouter.get("/allDoctor", async (req,res)=>{
     try {
-      let list = await UserModel.find({role: 'Doctor'});
+      let list = await DoctorModel.find();
       res.status(200).send(list);
     } catch (err) {
       console.log('/doctor/allDoctor: ',err.message);
@@ -14,20 +15,53 @@ doctorRouter.get("/allDocotor", async (req,res)=>{
     }
 })
 
-doctorRouter.post('/register', registerLogic('Doctor'));
+doctorRouter.post("/register", async (req, res) => {
+    const { name, email, password, fees, location, experience } = req.body
 
-doctorRouter.post('/login', loginLogic('Doctor'));
+    try {
+        isUserPresent = await DoctorModel.findOne({ email })
+        if (isUserPresent) {
+            return res.send({ "msg": "Login Directly" })
+        }
+
+        bcrypt.hash(password, 5, async (err, hash) => {
+            const user = new DoctorModel({ name, email, password: hash, fees, location, experience })
+            await user.save()
+            res.status(201).send({ "msg": "Registration Succesfull" })
+        });
+    } catch (error) {
+        res.status(401).send({ "msg": error.message })
+
+    }
+
+})
 
 
-doctorRouter.post("/newdr",async(req,res)=>{
-  try {
-      const blog= new UserModel(req.body)
-      await blog.save()
-      res.status(400).send("New Docotor register")
-      
-  }catch(error){
-      res.status(400).send({"msg":error.message})
-  }
+doctorRouter.post("/login", async (req, res) => {
+    const { email, password } = req.body
+
+    try {
+        const user = await DoctorModel.findOne({ email })
+        if (user) {
+            bcrypt.compare(password, user.password, function (err, result) {
+                if (result) {
+                    let accesstoken = jwt.sign({ "userID": user._id }, 'accesstoken', { expiresIn: "7d" });
+
+
+                    res.status(201).send({ "msg": "login success", "token": accesstoken, "user":user })
+
+                } else {
+                    res.status(401).send({ "msg": "wrong input,login failed ,User already exist, please login" })
+                }
+            });
+        } else {
+            res.status(401).send({ "msg": "login failed,user is not present" })
+
+        }
+    } catch (error) {
+        res.status(401).send({ "msg": "error occourd while login " })
+
+    }
 })
 
 // update for doctor
@@ -48,7 +82,7 @@ doctorRouter.patch("/update/:postID",async(req,res)=>{
 doctorRouter.delete("/delete/:postID",async(req,res)=>{
     const {postID}=req.params
     try {
-        await user.model.findByIdAndDelete({_id:postID})
+        await DoctorModel.findByIdAndDelete({_id:postID})
         res.status(200).send({"msg":"deleted"})
     } catch (error) {
         res.status(400).send({"msg":error.message})
