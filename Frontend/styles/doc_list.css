@@ -1,0 +1,149 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logos{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    width: 10%;
+}
+#lineOne{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    position:absolute;
+    top: -10px;
+    right: 10px;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2% 1%;
+    align-items: center;
+}
+
+#headerRight{
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+}
+
+#postBtn{
+    background-color: #16a085;
+    padding: 0% 2%;
+    color: #fafafa;
+}
+
+#postBtn:hover{
+    cursor: pointer;
+}
+#searchPortal{
+    text-align: center;
+    border: 1px solid rgb(236, 234, 234);
+    background-color: #fafafa;
+    position: sticky;
+    top: 0px;
+}
+
+#filterButtons{
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+#sort-select{
+    padding: 12px;
+    margin: 12px;
+    /* border: none; */
+    border-radius: 5px;
+    
+}
+input{
+    padding: 0.7%;
+    width: 22%;
+}
+
+#searchBtn{
+    padding: 0.7%;
+    width: 7%;
+}
+
+#content{
+    width: 90%;
+    margin: auto;
+    padding: .5rem;
+}
+
+#card {
+    width: 20rem;
+    height: 27rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+    color: #fff;
+}
+
+#card:hover #detail {
+    opacity: 1;
+}
+
+#detail h1 {
+    margin-bottom: 5px;
+}
+
+#detail h3 {
+    margin-bottom: 10px;
+}
+
+#detail p {
+    padding-right: 70px;
+    padding-left: 70px;
+    font-size: 12px;
+    text-align:left;
+    line-height: 1.2;
+}
+
+#detail h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#detail span {
+    font-weight: bold;
+}
+
+#detail button {
+    padding: 10px 10px;
+    background-color: #16a085;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
