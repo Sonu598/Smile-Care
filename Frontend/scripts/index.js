@@ -18,3 +18,9 @@ const swiper = new Swiper('.swiper', {
   },
 
 });
+let hamburger=document.querySelector(".hamburger-menu")
+function handleHamburger(){
+  console.log("hello")
+  hamburger.classList.toggle("activate")
+
+}

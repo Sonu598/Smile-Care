@@ -4,13 +4,35 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 /* ---navbar---- */
-/* **************Navbar CSS************** */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.hamburger-menu{
+    padding-top: 50px;
+    line-height: 50px;
+    text-align: center;
+    height: 450px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    left: 30%;
+    top:-100% ;
+    width: 70%;
+    transition: 0.5s;
+}
+.hamburger-menu h2:hover{
+    background-color: #38b6ffba;
+    color: #fff;
+}
+.hamburger{
+    display:none;
+    color: #fff;
+    font-size: 35px;
 
+}
 #navbar {
     /* width: 100%; */
     position: sticky;
@@ -47,12 +69,17 @@ body{
     display: block;
     margin-bottom:10px ;
 }
+#login-hamburger{
+    margin-top: 70px;
+    background-color:#38b6ff;
+    color:#fff;
+    width: 40%;
+}
 #loginBtn:hover{
     background-color: transparent;
     /* border: solid #fff; */
 }
 
-/* **************Navbar CSS************** */
 
 /* **************Responsive CSS************** */
 @media only screen and (max-width: 768px) {
@@ -75,7 +102,6 @@ body{
         height: 50px;
     }
 }
-/* **************Responsive CSS************** */
 
 
 /* ----body Css--- */
@@ -209,17 +235,21 @@ body{
 
 @media screen and (min-width:750px) and (max-width:1120px) {
     .sec3-card{
-        
         grid-template-columns: repeat(3,1fr);
-        /* gap: 30px;
-        width: 95%;
-        margin: auto;
-     */
     }
 }  
 
 /* small Screen */
 @media screen and (min-width:320px) and (max-width:750px) {
+    .hamburger-menu.activate{
+        display: block;       
+        top:8%;
+
+    }
+    .hamburger{
+        display: block;
+        margin-left: 40%;
+    }
     .nav-element{
         display: none;
     }
