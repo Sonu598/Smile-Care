@@ -3,6 +3,82 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
+/* ---navbar---- */
+/* **************Navbar CSS************** */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar {
+    /* width: 100%; */
+    position: sticky;
+    /* height: 90px; */
+    /* margin: auto; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #38b6ff;
+}
+
+#navbar>div a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    /* font-family: sans-serif; */
+    font-weight: bold;
+    font-size: 20px;
+   
+}
+#logo{
+    width: 150px;
+}
+
+#navbar>div>a:hover {
+    /* color: rgb(0, 63, 139); */
+    border-bottom:solid 2px #e7eee7;
+}
+#loginBtn{
+    background-color: #e7eee7;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin-bottom:10px ;
+}
+#loginBtn:hover{
+    background-color: transparent;
+    /* border: solid #fff; */
+}
+
+/* **************Navbar CSS************** */
+
+/* **************Responsive CSS************** */
+@media only screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
+    #navbar>div a {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    /* Adjust font size and line height for even smaller screens */
+    #navbar>div a {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* Reduce logo size for smaller screens */
+    #navbar>div:first-child a img {
+        width: 100px;
+        height: 50px;
+    }
+}
+/* **************Responsive CSS************** */
+
+
+/* ----body Css--- */
 .swiper-wrapper img{ 
     width:100%;
     height: 450px;
@@ -128,3 +204,56 @@ body{
 .sec4 img{
     width: 500px;
 }
+
+/* medium Screen */
+
+@media screen and (min-width:750px) and (max-width:1120px) {
+    .sec3-card{
+        
+        grid-template-columns: repeat(3,1fr);
+        /* gap: 30px;
+        width: 95%;
+        margin: auto;
+     */
+    }
+}  
+
+/* small Screen */
+@media screen and (min-width:320px) and (max-width:750px) {
+    .nav-element{
+        display: none;
+    }
+    #sec2-text{
+        flex-direction: column;
+      
+    }
+    #sec2-text button{
+        padding: 10px;
+        height: 60px;
+       
+    }
+    .sec2{
+        width: 90%;
+        height: 140px;
+       
+       
+    }
+    .sec3-card{        
+        grid-template-columns: repeat(2,1fr);
+     
+    }
+    .sec1{
+        text-align: center;
+        line-height: 35px;
+        width: 75%;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .sec4-card{
+        display:flex ;
+        flex-direction: column-reverse;
+        margin: 120px 50px;
+        
+    }
+    
+}
+
