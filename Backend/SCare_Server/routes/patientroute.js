@@ -9,6 +9,16 @@ require('../configs/googleOauth');
 
 const patientRouter = express.Router();
 
+patientRouter.get('/allPatient', async(req,res)=>{
+    try {
+        let list = await UserModel.find();
+        res.status(200).send(list);
+      } catch (err) {
+        console.log('error',err.message);
+        res.status(500).send({msg: err.message});
+      }
+})
+
 patientRouter.post("/register", async (req, res) => {
     const { name, email, password, age } = req.body
 
