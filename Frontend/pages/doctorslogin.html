@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextMate - Sign Up</title>
-    <link rel="stylesheet" href="../styles/signin.css">
+    <link rel="stylesheet" href="../styles/doctorslogin.css">
 </head>
 <body>
     <div class="main">
@@ -26,28 +26,26 @@
                 <span id="forPassword1" style="visibility: hidden;">please enter correct password</span><br>
                 <input type="checkbox" name="" id="" placeholder="" class="checkbox" checked><span class="spans">Remember Me</span>
                 <button id="signin-btn" type="submit" class="submit-btn">Sign In</button>
-                
                 <div>
-                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt="">Sign In With Google</button>
-                </div>
-                <div id="other-logins">
-                    <a href=""> Login as Doctor ?</a>
-                    <a href=""> Login as Admin ?</a>
+                    <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt="">Sign up with Google</button>
                 </div>
             </form>
             <form id="signup" class="input-group">
                 <input id="signup-name" type="text" class="input-field" placeholder="Full Name" required>
                 <input id="signup-email" type="email" class="input-field" placeholder="Email ID" required>
-                <span id="forEmail2" style="visibility: hidden;">please enter a valid email</span>
-                <input id="signup-age" type="number" class="input-field" placeholder="Enter Your Age" required>
+                
+                <input id="signup-exp" type="number" class="input-field" placeholder="Experience (In Years)" required>
+                <input id="signup-fees" type="number" class="input-field" placeholder="Set Your Fees" required>
+                <input id="signup-location" type="text" class="input-field" placeholder="Your Location" required>
                 <input id="signup-password" type="password" class="input-field" placeholder="Enter Password" required>
                 <div id="eye">
                     <ion-icon name="eye-off-outline" id="hide"></ion-icon>
                     <ion-icon name="eye-outline" id="show"></ion-icon>
                 </div>
+                <span id="forEmail2" style="visibility: hidden;">please enter a valid email</span>
                 <span id="forPassword" style="visibility: hidden;">password must contain at least 8 characters <br> including upper,lowercase and numbers</span><br>
                 <input type="checkbox" class="checkbox" checked><span class="spans">I agree to the <a href="#">Term of Use</a> and <a href="#">Privacy Policy</a>.</span>
-                
+
                 <button id="signup-btn" type="submit" class="submit-btn"><p>Sign Up</p></button>
                 <div>
                     <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt="">Sign up with Google</button>
@@ -73,4 +71,4 @@
 </html>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="../scripts/signin.js"></script>
+<script src="../scripts/doctorslogin.js"></script>

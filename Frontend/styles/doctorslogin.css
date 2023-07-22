@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    padding-bottom: 30px;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../images/Background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.form-box{
+    width: 420px;
+    height: 700px;
+    position: relative;
+    background-color: #ffffffe3;
+    backdrop-filter: blur(33px);
+	background-blend-mode: overlay;
+    margin: auto;
+    border-radius: 30px;
+    padding: 5px;
+    overflow: hidden;
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 3px #38b6ff;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    background: linear-gradient(to left, #66c2f8,#1a9eea);
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group{
+    top:180px;
+    position: absolute;
+    width: 320px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #293b52;
+    outline: none;
+    background: transparent;
+}
+span{
+    font-size: 13px;
+}
+#signin-btn,#signup-btn{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+p{
+    text-align: center;
+}
+.submit-btn{
+    width: 95%;
+    height: 45px;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    background: linear-gradient(to left, #81c8f1,rgb(25, 155, 231));
+    border: 0;
+    outline: none;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+.submit-btn img{
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -50px;
+    width: 9%;
+    border-radius: 15px;
+}
+.submit-btn:hover{
+    color: #38b6ff;
+    background: #ffffffd8;
+    outline: 2px solid #38b6ff;
+}
+.checkbox{
+    position: relative;
+    top: 2px;
+}
+.spans{
+    color: #242424;
+    font-size: 12px;
+    margin-left: 5px;
+}
+#signin{
+    left: 50px;
+}
+#signup{
+    left: 450px;
+}
+#signup a{
+    color: #38b6ff;
+}
+
+
+.popup{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(10px);
+    height: 600px;
+    width: 28%;
+    border-radius: 15px ;
+    text-align: center;
+ 
+    top: 0%;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+    border: #e2e2e2 1px solid;
+ }
+ .openpopup{
+    visibility: visible;
+    top: 56%;
+    transform: translate(-50% , -50%) scale(1);
+ }
+ .popup>h1{
+    padding-top: 50px;
+    font-family: serif;
+    font-size: 50px;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 50px;
+ }
+ .popup h3{
+    font-family: serif;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 50px;
+ }
+ #otp{
+    font-size: 30px;
+ }
+ #otpInput input{
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    text-align: center;
+    border: 0px;
+    outline: none;
+ }
+ input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ #otpButton{
+    width: 30%;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+ }
+
+ .popup-open {
+    backdrop-filter: blur(55px);
+  }
+
+  .loading {
+    position: relative;
+    margin: auto;
+    margin-top: 40%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px dotted #111111 ;
+    border-top-color: #16161649;
+    border-right-color: #00000091;
+    border-left-color: #ffffff25;
+    border-width: 10px;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  #load>p{
+    position: relative;
+    font-size: 50px;
+    color: white;
+  }
+  
+  #eye{
+    position: relative;
+    top: -35px;
+    left: 90%;
+    width: 25px;
+}
+#eye>ion-icon{
+    display: block;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+#eye>ion-icon:nth-child(1){
+    display: none;
+}
+
+  /* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
+}
