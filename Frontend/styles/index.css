@@ -21,7 +21,7 @@ body{
     left: 30%;
     top:-100% ;
     width: 70%;
-    transition: 0.5s;
+    transition: ease-in 0.9s;
 }
 .hamburger-menu h2:hover{
     background-color: #38b6ffba;
@@ -65,49 +65,34 @@ body{
     background-color: #e7eee7;
     width: 100%;
     border-radius: 5px;
-    padding: 5px;
-    display: block;
-    margin-bottom:10px ;
+    padding: 10px;
+    font-size: 15px;
+    font-weight:bold;
+    border:none;
+    color: #38b6ff;
+   
 }
 #login-hamburger{
     margin-top: 70px;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
     background-color:#38b6ff;
     color:#fff;
     width: 40%;
 }
-#loginBtn:hover{
-    background-color: transparent;
+#loginBtn:hover,#login-hamburger:hover{
+    /* background-color: transparent; */
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.5s;
     /* border: solid #fff; */
 }
-
-
-/* **************Responsive CSS************** */
-@media only screen and (max-width: 768px) {
-    /* Adjust font size for smaller screens */
-    #navbar>div a {
-        font-size: 18px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    /* Adjust font size and line height for even smaller screens */
-    #navbar>div a {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    /* Reduce logo size for smaller screens */
-    #navbar>div:first-child a img {
-        width: 100px;
-        height: 50px;
-    }
-}
-
 
 /* ----body Css--- */
 .swiper-wrapper img{ 
     width:100%;
-    height: 450px;
+    height: 480px;
    
 }
 .banner-container{
@@ -169,7 +154,7 @@ body{
 }
 #bookBtn{
     width: 25%;
-    /* padding: 20px; */
+    padding: 20px;
     font-size: 20px;
     border: none;
     background-color: aliceblue;
@@ -196,6 +181,7 @@ body{
     border-radius:100px ;
 }
 .sec3-card div button{
+    margin-top: 25px;
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -231,19 +217,95 @@ body{
     width: 500px;
 }
 
+/* ---------footer css--------- */
+
+a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    top: 120px;
+    width: 100%;
+    padding: 50px;
+    font-size: 20px;
+    background-color: #38b6ff;
+  }
+  
+  footer ion-icon {
+    font-size: 40px;
+    color: rgb(231, 227, 227);
+    transition: transform .5s ease-in;
+  }
+  
+  footer ion-icon:hover {
+    color: rgb(0, 0, 0);
+    transform: scale(0.9);
+  
+  }
+  
+  footer p {
+    margin: 5px 0 0px 50px;
+  }
+  
+  footer p:hover {
+    cursor: pointer;
+    font-weight: bold;
+   
+  }
+  
+  footer h3 {
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  
+  footer div:nth-child(1) {
+    text-align: left;
+  } 
+  
+  #footer-contact {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact {
+    display: flex;
+    margin: 20px 0 0 0;
+  }
+    
+  .socialmedia ion-icon {
+    margin: 20px 20px 0 0;
+  }
+  
+
 /* medium Screen */
 
 @media screen and (min-width:750px) and (max-width:1120px) {
     .sec3-card{
         grid-template-columns: repeat(3,1fr);
     }
+    .sec2{
+        text-align: center;
+        width: 95%;
+        height: 120px;       
+       
+    }
 }  
 
 /* small Screen */
 @media screen and (min-width:320px) and (max-width:750px) {
+    .swiper-wrapper img{ 
+        width:100%;
+        height: 340px;
+       
+    }
     .hamburger-menu.activate{
         display: block;       
-        top:8%;
+        top:14%;
+        transition: ease-in 0.8s;
 
     }
     .hamburger{
@@ -253,6 +315,9 @@ body{
     .nav-element{
         display: none;
     }
+    .sec1-card p{
+        height: 180px;
+    }
     #sec2-text{
         flex-direction: column;
       
@@ -260,12 +325,14 @@ body{
     #sec2-text button{
         padding: 10px;
         height: 60px;
+        margin-top: 25px;
+        width: 60%;
        
     }
     .sec2{
-        width: 90%;
-        height: 140px;
-       
+        text-align: center;
+        width: 95%;
+        height: 200px;       
        
     }
     .sec3-card{        
@@ -284,6 +351,33 @@ body{
         margin: 120px 50px;
         
     }
+    .sec4-card img{
+        width: 400px;
+    }
+
+    
+  footer {
+    grid-template-columns: repeat(1, 1fr);
+    font-size: 25px;
+    text-align: center;
+  }
+
+  footer ion-icon {
+    font-size: 40px;
+    padding-left: 30px;
+  }
+
+  footer div:nth-child(1) {
+    text-align: center;
+  }
+
+  #footer-contact div {
+    justify-content: center;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
     
 }
 

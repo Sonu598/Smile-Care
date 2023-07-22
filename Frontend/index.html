@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="./styles/index.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  
   </head>
   <body>
     <div id="navbar">
@@ -22,7 +25,7 @@
       <div class="hamburger" onclick="handleHamburger()"><ion-icon name="menu"></ion-icon></div>
   </div> 
     <div class="hamburger-menu">
-      
+
       <h2>About Us</h2>
       <h2>Our Doctors</h2>
       <h2>Appointments</h2>
@@ -170,8 +173,87 @@
         </div>
       </div>
     </div>
+      <!-- footer HTML -->
+    <footer>
 
-    <footer></footer>
+      <div id="footer-contact">
+          <div>
+              <div class="contact">
+                  <div> <ion-icon name="location-sharp"></ion-icon></div>
+
+                  <p>House N0 3 Shivaji Nagar ,MG Road ,Delhi ,New Delhi</p>
+              </div>
+              <div class="contact">
+                  <div><ion-icon class="chat-icon" name="chatbubble-ellipses-outline"></ion-icon></div>
+
+                  <p><a href="#" target="_blank">
+                          Chat With Us
+                      </a></p>
+              </div>
+              <div class="contact">
+                  <div> <ion-icon class="mail-icon" name="mail-sharp"></ion-icon> </div>
+
+                  <!-- Contact us page link -->
+                  <p>
+                      <a href="#">
+                          Contact Us
+                      </a>
+                  </p>
+              </div>
+          </div>
+      </div>
+      <div>
+          <a href="#"><h3>About Us Doctors</h3></a>
+          <p>
+              <a href="#">
+                Appointments
+              </a>
+          </p>
+          <p>
+              <a href="#">
+                Doctors
+              </a>
+          </p>
+          <p>
+              <a href="#">
+                Contacts
+              </a>
+          </p>
+          <p>
+              <a href="#">
+                Our Services
+              </a>
+          </p>
+
+      </div>
+      <div>
+          <a href="#"><h3>About</h3></a>
+          <p>
+              <a href="#">
+                  About Us
+              </a>
+          </p>
+          <p>
+              <a href="#">
+                  Contact
+              </a>
+          </p>
+          <p>
+              <a href="#">
+                  Blog
+              </a>
+          </p>
+      </div>
+
+      <div class="socialmedia">
+          <h3>Social-Media</h3>
+          <ion-icon name="logo-facebook"></ion-icon>
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
+          <ion-icon name="logo-github"></ion-icon>
+      </div>
+      
+    </footer>
   </body>
 </html>
 <!-- swiper script -->
@@ -179,15 +261,4 @@
 
 <!-- index.js file -->
 <script src="./scripts/index.js"></script>
-<!-- header script -->
-<script>
-  $(function () {
-      $('header').load('./pages/navbar.html');
-  }) 
-</script>
-<!-- footer script -->
-<script>
-  $(function () {
-      $('footer').load('./pages/footer.html');
-  }) 
-</script>
+

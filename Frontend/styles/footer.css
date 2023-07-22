@@ -77,90 +77,10 @@ footer div:nth-child(1) {
 
 /*<------------------- Media Queries-----------------------> */
 
-/* ----------Medium Screen------- */
-@media screen and (min-width:750px) and (max-width:1120px) {
-  .sectionA h3 {
-    font-size: 40px;
-  }
-
-  .sec4 img {
-    width: 200px;
-  }
-
-  #a .text,
-  #c .text {
-    margin-left: 30px;
-  }
-
-  .sectionA div {
-    width: 70%;
-    margin: auto;
-  }
-
-  .sectionA div:nth-child(2) {
-    width: 70%;
-    margin: auto;
-  }
-
-  #profile-container {
-    width: 70%;
-  }
-}
 
 /*------------ Small Screen--------------- */
 @media screen and (min-width:320px) and (max-width:750px) {
-  .nav-elem {
-    display: none;
-  }
-
-  #welcome-img {
-    width: 300px;
-    display: none;
-  }
-
-  .sectionA {
-    display: flex;
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image {
-    width: 100%;
-    text-align: center;
-  }
-
-  .text {
-    width: 80%;
-    text-align: justify;
-  }
-
-  #startNow {
-
-    display: block;
-    margin: auto;
-    margin-top: 20px;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  #user-dropdown {
-    width: 33%;
-    left: 60%;
-
-  }
- 
-
-  .sectionA img {
-    width: 300px;
-  }
-
-  .sectionA h3 {
-    font-size: 40px;
-    text-align: center;
-  }
+  
 
   footer {
     grid-template-columns: repeat(1, 1fr);
