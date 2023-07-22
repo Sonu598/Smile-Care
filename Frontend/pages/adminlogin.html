@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Smile Care | Admin Login</title>
+    <link rel="stylesheet" href="../styles/adminlogin.css">
+</head>
+<body>
+    <header></header>
+    <div class="main">
+        <div class="form-box">
+            <h2>Admin Log In</h2>
+            <form id="signin" class="input-group">
+                <input id="admin-userid" type="text" class="input-field" placeholder="Email ID"
+                required>
+                <input id="admin-password" type="password" class="input-field" placeholder="Enter Password"
+                required>
+                <input type="checkbox" class="checkbox"><span>Rember Password</span>
+                <button id="admin-btn" type="submit" class="submit-btn">Log In as Admin</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../scripts/adminlogin.js"></script>
+<script>
+    $(function () {
+        $('header').load('navbar.html');
+    }) 
+</script>
