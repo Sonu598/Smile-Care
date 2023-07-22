@@ -1,5 +1,5 @@
 const express = require("express");
-const scanRouter = express().router();
+const scanRouter = express.Router();
 const bp = require("body-parser");
 const qr = require("qrcode");
 
