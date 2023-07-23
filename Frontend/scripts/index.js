@@ -1,3 +1,9 @@
+$(function () {
+  $('#navbar').load('navbar.html');
+  $('#footer').load('footer.html');
+})
+
+
 const swiper = new Swiper('.swiper', {
     autoplay:{
         delay:3000,
