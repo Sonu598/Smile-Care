@@ -56,6 +56,6 @@ $(function () {
           console.error("Error:", error);
       });
 
-      window.location.href="../pages/payment.html"
+      window.location.href="../pages/amit_payment.html"
   });
 });

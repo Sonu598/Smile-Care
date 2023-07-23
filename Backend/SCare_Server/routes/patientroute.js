@@ -7,6 +7,7 @@ const passport = require('passport');
 const { UserModel } = require('../models/usermodel');
 const { client } = require('../configs/redis');
 const { transporter } = require('../controllers/nodemailer')
+const sgMail = require("@sendgrid/mail");
 require('../configs/googleOauth');
 
 const patientRouter = express.Router();
@@ -85,60 +86,106 @@ patientRouter.post("/logout", async (req, res) => {
 // generate otp and send to client and also store it in redis.
 
 
-patientRouter.post("/sendmail",auth,async(req,res)=>{
-    const {userID,amount}=req.body;
-    try{
-        let user= await UserModel.findOne({_id:userID});
-        console.log(user);
-        const otp=Math.floor((Math.random()*1000000)+1);
-        await client.set(user.email,otp,"EX",15*60);
+// patientRouter.post("/sendmail",auth,async(req,res)=>{
+//     const {userID,amount}=req.body;
+//     try{
+//         let user= await UserModel.findOne({_id:userID});
+//         console.log(user);
+//         const otp=Math.floor((Math.random()*1000000)+1);
+//         await client.set(user.email,otp,"EX",15*60);
        
-        let mailOptions = {
-            from: 'smilecare.operation@gmail.com',
-            to: user.email,
-            subject: 'TRANSCTION OTP',
-            text: `YOUR OTP FOR PAYMENT OF RS ${amount} FOR FEES IN SMILE CARE IS : ${otp}
-            note:- This OTP is valid for only 15 minutes.`
-        };
+//         let mailOptions = {
+//             from: 'smilecare.operation@gmail.com',
+//             to: user.email,
+//             subject: 'TRANSCTION OTP',
+//             text: `YOUR OTP FOR PAYMENT OF RS ${amount} FOR FEES IN SMILE CARE IS : ${otp}
+//             note:- This OTP is valid for only 15 minutes.`
+//         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                res.status(401).send({"error":"Internal server error"});
-            } else {
-                res.status(200).send({"msg":"Email sent successfully"});
-            }
-        });
+//         transporter.sendMail(mailOptions, (error, info) => {
+//             if (error) {
+//                 res.status(401).send({"error":"Internal server error"});
+//             } else {
+//                 res.status(200).send({"msg":"Email sent successfully"});
+//             }
+//         });
 
-    }catch(err){
-        res.status(401).send(err);
+//     }catch(err){
+//         res.status(401).send(err);
+//     }
+// });
+
+// //verify otp from redis
+
+// patientRouter.post("/verify",auth,async(req,res)=>{
+//     try{
+//         const {otp}=req.body;
+//         const id=req.body.userID;
+//         const user= await UserModel.findOne({_id:id});
+//         // console.log(user);
+//         const data= await client.get(user.email);
+//         // console.log(data);
+//         if(otp==data){
+//             const {plan,price}=req.body;
+//             const userdata= new PaidModel({plan,price});
+//             await userdata.save();
+//             res.status(200).send({"msg":true});
+//         }else{
+//             res.status(400).send({"msg":false});
+//         }
+
+//     }catch(err){
+//         res.status(401).send({"error":err});
+//     }
+// })
+
+
+//generating ranom OTP here
+patientRouter.post("/generate", async (req, res) => {
+    try {
+      let { email } = req.body;
+      console.log(email);
+      sgMail.setApiKey(process.env.api_key);
+  
+      function generateOTP() {
+        const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  
+        let generatedOtp = "";
+  
+        for (let i = 0; i < 4; i++) {
+          const index = Math.floor(Math.random() * digits.length);
+  
+          generatedOtp += digits[index];
+        }
+        return generatedOtp;
+      }
+  
+      const otp = generateOTP();
+  
+      const msg = {
+        to: email,
+        from: "smilecare.operation@gmail.com",
+        subject: "One Time Password",
+        text: `Your OTP for payment to Smile Care is ${otp}`,
+      };
+      console.log(msg);
+      sgMail.send(msg).then(
+        () => {},
+        (error) => {
+          console.error(error);
+  
+          if (error.response) {
+            console.error(error.response.body);
+          }
+        }
+      );
+  
+      res.send(otp);
+    } catch (err) {
+      res.send(err);
+      console.log(err);
     }
 });
-
-//verify otp from redis
-
-patientRouter.post("/verify",auth,async(req,res)=>{
-    try{
-        const {otp}=req.body;
-        const id=req.body.userID;
-        const user= await UserModel.findOne({_id:id});
-        // console.log(user);
-        const data= await client.get(user.email);
-        // console.log(data);
-        if(otp==data){
-            const {plan,price}=req.body;
-            const userdata= new PaidModel({plan,price});
-            await userdata.save();
-            res.status(200).send({"msg":true});
-        }else{
-            res.status(400).send({"msg":false});
-        }
-
-    }catch(err){
-        res.status(401).send({"error":err});
-    }
-})
-
-
 
 patientRouter.post("/forgetpassword",async(req,res)=>{
     let {email,password}=req.body;

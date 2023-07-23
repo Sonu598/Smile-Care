@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Payment</title>
+    <link
+    rel="shortcut icon"
+    href="./images/smart_tutor_image_3.jpg"
+    type="image/x-icon"
+  />
+    <style>
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #pal {
+            width: 30%;
+            margin: auto;
+            margin-top: 10rem;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            padding: 1px 0px 20px 0px;
+        }
+
+        #pal img {
+            width: 80%;
+            display: flex;
+            margin: auto;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: auto;
+        }
+
+        form>div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form>div>div {
+            width: 35%;
+        }
+
+        input {
+            height: 25px;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            height: 30px;
+            width: 100%;
+            margin: auto;
+            border: 1px solid rgb(9, 118, 161);
+            background-color: aliceblue;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(49, 124, 153);
+            margin-top: 15px;
+            height: 35px;
+            border: none;
+            font-weight: bold;
+            border: 1px solid rgb(9, 118, 161);
+        }
+
+        input[type="submit"]:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+
+        #otp {
+            height: 200px;
+            width: 200px;
+            margin-left: 100px;
+            margin-top: 60px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            background-color: aliceblue;
+            position: absolute;
+            display: none;
+        }
+
+        #val {
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid black;
+            width: 80%;
+            margin-left: 17px;
+        }
+
+        #otp button {
+            padding: 3px 30px;
+            margin-left: 52px;
+            margin-top: 20px;
+        }
+
+        #succ {
+            position: absolute;
+            width: 55%;
+            margin: auto;
+            margin-left: 68.5vh;
+            margin-top: 20vh;
+            display: none;
+        }
+
+        #succ img {
+            width: 60%;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        #succ h2,
+        #succ p {
+            position: absolute;
+            text-align: center;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        #succ h2 {
+            margin-left: 12px;
+            margin-top: 30px;
+        }
+
+        #succ p {
+            margin-top: -90px;
+            margin-left: 10vh;
+            font-size: 20px;
+        }
+
+        #succ h4 {
+            font-size: 15px;
+            margin-top: -30px;
+            margin-left: 18vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div id="succ">
+        <h2>OTP Verified - Payment Successfully</h2>
+        <img src="images/tick.jpg" alt="">
+        <p>Thankyou for your Support ! <br>We look forward to serving you again.</p>
+        <h4>Go to <button id="recall">HOME</button> Or, Redirect in 8 seconds</h4>
+    </div>
+
+    <div id="pal">
+
+        <h1>Pay Invoice</h1>
+
+        <div id="otp">
+            <h2>OTP Verify</h2>
+            <input id="val" type="number" placeholder="Please Enter OTP Here">
+            <button id="ok">OK</button>
+        </div>
+
+        <img src="images/WhatsApp Image 2023-05-09 at 00.09.54.jpg" alt="">
+
+        <h3 id="in_date"></h3>
+        <h3 id="out_date"></h3>
+        <h2 id="displayed"></h2>
+
+        <form action="">
+            <label for="">Name On Card</label>
+            <input type="text" id="naam" placeholder="Enter Your Name">
+            <label for="">Card Number</label>
+            <input type="number" id="num" placeholder="Enter Card Number">
+            <div>
+                <div>
+                    <label for="">Expiry Date</label>
+                    <input id="cvv" type="text" placeholder="MM/YY">
+                </div>
+                <div>
+                    <label for="">CVV</label>
+                    <input type="text" id="exp" maxlength="3" placeholder="CVV">
+                </div>
+            </div>
+            <!-- <img src="./images/card.jpg" alt=""> -->
+            <input id="sub" type="submit" value="Continue">
+        </form>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let paaskey;
+    document.querySelector("#sub").addEventListener("click", my)
+
+    function my(e) {
+        e.preventDefault()
+        let naam = document.querySelector("#naam").value;
+        let num = document.querySelector("#num").value;
+        let cvv = document.querySelector("#cvv").value;
+        let exp = document.querySelector("#exp").value;
+
+        if (naam == "" || num == "" || cvv == "" || exp == "") {
+            alert("Please fill All the details")
+        }
+        else {
+            //=====================================fexhing otp here========================================//
+         
+            fetch("http://localhost:2015/patient/generate",{
+                method:"POST",
+                headers:{
+                    "Content-type":"application/json",
+                },
+                body:JSON.stringify({email:localStorage.getItem("userEmail")})
+                    
+            })
+                .then(res => {
+                    console.log(res)
+                    
+                   return res.json()
+                 
+            })
+                .then(result => {
+                    console.log(result);
+                    // alert(`Your OTP is : ${result}`);  // Otp is recieved or not
+
+                    paaskey = result;
+
+                    document.querySelector("#otp").style.display = "block";
+                    // validateOTP(result)
+                }).catch(err=>{
+                    console.log(err);
+                })
+
+        }
+    }
+
+    // function validateOTP(otp){
+
+    // }
+    let otpval = document.querySelector("#val")
+    document.querySelector("#ok").addEventListener("click", () => {
+        if (otpval.value == paaskey) {
+            document.querySelector("#otp").style.display = "none";
+            // document.querySelector("#succ").style.display = "block"
+            alert("Your slot has been booked, cheers!!!")
+            setTimeout(() => {
+                window.location.href = "./index.js"
+            }, 1000)
+        } else {
+            alert("Wrong OTP")
+        }
+    })
+    document.querySelector("#recall").addEventListener("click", () => {
+        window.location.href = "tutor/tutorAppointment.html"
+    })
+
+    let tota = localStorage.getItem("amoount")
+
+    document.querySelector('#displayed').innerText = `Total Payment Amount : ₹ ${tota}`
+
+
+    // ---------------------------------------------Ls name------------------
+
+    // let account = document.querySelector("#account")
+    // let ss = 1;
+    // account.addEventListener("click", () => {
+    //     if (ss == 1) {
+    //         ss = 0;
+    //         document.querySelector("#acc").style.display = "block"
+    //     } else {
+    //         ss = 1;
+    //         document.querySelector("#acc").style.display = "none"
+    //     }
+    // })
+
+</script>
+<script>
+    $(function () {
+        $('header').load('navbar.html');
+    }) 
+  </script>
