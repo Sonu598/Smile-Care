@@ -71,12 +71,16 @@ input{
 #content{
     width: 90%;
     margin: auto;
-    padding: .5rem;
+    /* padding: .5rem; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .2rem;
 }
 
 #card {
-    width: 20rem;
-    height: 27rem;
+    width: 14rem;
+    height: 18rem;
+    margin: .3rem;
     border: 1px solid #ccc;
     border-radius: 10px;
     position: relative;
@@ -122,7 +126,7 @@ input{
 #detail p {
     padding-right: 70px;
     padding-left: 70px;
-    font-size: 12px;
+    font-size: 16px;
     text-align:left;
     line-height: 1.2;
 }
