@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doctor List</title>
   <link rel="stylesheet" href="/Frontend/styles/doc_list.css" />
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
+  <header></header>
   <div id="mainContainer">
 
     <!-- Work for the search inbox starts here! -->
@@ -52,7 +54,19 @@
     </div>
 
   </div>
+  <footer></footer>
 </body>
 <script src="/Frontend/scripts/doc-list.js"></script>
 
 </html>
+<script>
+  $(function () {
+      $('header').load('navbar.html');
+  }) 
+</script>
+
+<script>
+  $(function () {
+      $('footer').load('footer.html');
+  }) 
+</script>

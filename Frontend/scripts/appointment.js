@@ -10,8 +10,8 @@ $(function () {
   appointmentForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const doctorId = document.getElementById("doctorId").value;
-      const userId = document.getElementById("userId").value;
+      const doctorname = document.getElementById("doctorId").value;
+      const username = document.getElementById("userId").value;
       const time = document.getElementById("time").value;
       const date = document.getElementById("date").value;
 
@@ -23,8 +23,8 @@ $(function () {
               "Content-Type": "application/json"
           },
           body: JSON.stringify({
-              doctorId,
-              userId,
+              doctorname,
+              username,
               time,
               date
           })

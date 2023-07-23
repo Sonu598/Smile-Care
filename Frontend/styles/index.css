@@ -9,7 +9,7 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-.hamburger-menu{
+/* .hamburger-menu{
     padding-top: 50px;
     line-height: 50px;
     text-align: center;
@@ -35,32 +35,29 @@ body{
 }
 #navbar {
     /* width: 100%; */
-    position: sticky;
+    /* position: sticky; */
     /* height: 90px; */
     /* margin: auto; */
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #38b6ff;
-}
+    background-color: #38b6ff; */
+/* } */
 
-#navbar>div a {
+/* #navbar>div a {
     cursor: pointer;
     text-decoration: none;
     color: white;
     /* font-family: sans-serif; */
-    font-weight: bold;
-    font-size: 20px;
+    /* font-weight: bold;
+    font-size: 20px; */
    
-}
-#logo{
-    width: 150px;
-}
+/* } */
 
-#navbar>div>a:hover {
+/* #navbar>div>a:hover { */
     /* color: rgb(0, 63, 139); */
-    border-bottom:solid 2px #e7eee7;
-}
+    /* border-bottom:solid 2px #e7eee7; */
+/* } */
 #loginBtn{
     background-color: #e7eee7;
     width: 100%;
@@ -87,7 +84,7 @@ body{
     transform: scale(1.1);
     transition: transform 0.5s;
     /* border: solid #fff; */
-}
+} */
 
 /* ----body Css--- */
 .swiper-wrapper img{ 
@@ -224,61 +221,6 @@ a {
     color: black;
   }
   
-  footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    position: relative;
-    top: 120px;
-    width: 100%;
-    padding: 50px;
-    font-size: 20px;
-    background-color: #38b6ff;
-  }
-  
-  footer ion-icon {
-    font-size: 40px;
-    color: rgb(231, 227, 227);
-    transition: transform .5s ease-in;
-  }
-  
-  footer ion-icon:hover {
-    color: rgb(0, 0, 0);
-    transform: scale(0.9);
-  
-  }
-  
-  footer p {
-    margin: 5px 0 0px 50px;
-  }
-  
-  footer p:hover {
-    cursor: pointer;
-    font-weight: bold;
-   
-  }
-  
-  footer h3 {
-    margin-top: 20px;
-    margin-left: 50px;
-  }
-  
-  footer div:nth-child(1) {
-    text-align: left;
-  } 
-  
-  #footer-contact {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .contact {
-    display: flex;
-    margin: 20px 0 0 0;
-  }
-    
-  .socialmedia ion-icon {
-    margin: 20px 20px 0 0;
-  }
   
 
 /* medium Screen */
@@ -354,30 +296,6 @@ a {
     .sec4-card img{
         width: 400px;
     }
-
-    
-  footer {
-    grid-template-columns: repeat(1, 1fr);
-    font-size: 25px;
-    text-align: center;
-  }
-
-  footer ion-icon {
-    font-size: 40px;
-    padding-left: 30px;
-  }
-
-  footer div:nth-child(1) {
-    text-align: center;
-  }
-
-  #footer-contact div {
-    justify-content: center;
-  }
-
-  .contact {
-    flex-direction: column;
-  }
     
 }
 

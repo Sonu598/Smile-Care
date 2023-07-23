@@ -1,30 +1,21 @@
 const { auth } = require('../controllers/authorization');
 const { AppointmentModel } = require('../models/appointmentmodel');
-const UserModel = require('../models/usermodel');
+const { UserModel } = require('../models/usermodel')
+const { DoctorModel } = require('../models/doctormodel');
 const appointmentRouter = require("express").Router();
 
 
 //1. get all doctors for appointment page
 
-appointmentRouter.get("/doctors",async(req,res)=>{
-    try{
-        let data = await UserModel.find({role:"Doctor"});
-        res.send(data)
-    }catch(err){
-        console.log("errror in /appointments/doctors | get",err)
-    }
-})
-
-
 
 appointmentRouter.post("/",auth,async(req,res)=>{
     try{
    
-    let {userId,doctorId,message,time,date}=req.body;
-    if(!userId){
+    let {username,doctorname,time,date}=req.body;
+    if(!username){
         res.status(401).json("you are not authorized")
     }
-    else if (!doctorId){
+    else if (!doctorname){
         res.status(507).json('No doctor selected')
     }
     else if(!time){
@@ -34,7 +25,7 @@ appointmentRouter.post("/",auth,async(req,res)=>{
         res.status(507).json("No date selected")
     }
     else {
-        let appointmentExists = await AppointmentModel.findOne({time,date,doctorId})
+        let appointmentExists = await AppointmentModel.findOne({time,date,doctorname})
         if(appointmentExists){
             res.status(409).json("That slot is already booked")
         }
@@ -49,6 +40,37 @@ appointmentRouter.post("/",auth,async(req,res)=>{
         res.status(500).json("server error")
 }
 })
+
+appointmentRouter.post("/sendmail",auth,async(req,res)=>{
+    const {time,date,doctorname,username}=req.body;
+    try{
+        // let user= await UserModel.findOne({_id:userID});
+        // let doctor= await DoctorModel.findOne({_id:doctorId});
+        // console.log(user);
+        
+       
+        let mailOptions = {
+            from: 'smilecare.operation@gmail.com',
+            to: user.email,
+            subject: 'Smile Care Appointment',
+            text: `Hello ${username},
+            You have scheduled an appointment with ${doctorname}
+            on Date :- ${date} at ${time}.
+            Thank you for be with us`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                res.status(401).send({"error":"Internal server error"});
+            } else {
+                res.status(200).send({"msg":"Email sent successfully"});
+            }
+        });
+
+    }catch(err){
+        res.status(401).send(err.message);
+    }
+});
 
 
 //all appointments of a doctor
