@@ -7,8 +7,8 @@ fetch("http://localhost:2015/doctor/allDoctor")
   .then((data) => {
     TutorsDomain(data)
   });
- let data=[{name:"amit", fees:30}]
- TutorsDomain(data)
+//  let data=[{name:"amit", fees:30}]
+//  TutorsDomain(data)
 
 function TutorsDomain(data) {
   contain.innerHTML = `${data
