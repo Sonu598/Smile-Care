@@ -5,6 +5,8 @@ const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 const passport = require('passport');
 const { UserModel } = require('../models/usermodel');
+const { client } = require('../configs/redis');
+const { transporter } = require('../controllers/nodemailer')
 require('../configs/googleOauth');
 
 const patientRouter = express.Router();
@@ -95,7 +97,7 @@ patientRouter.post("/sendmail",auth,async(req,res)=>{
             from: 'smilecare.operation@gmail.com',
             to: user.email,
             subject: 'TRANSCTION OTP',
-            text: `YOUR OTP FOR PAYMENT OF RS ${amount} FOR Vlink PLAN IS : ${otp}
+            text: `YOUR OTP FOR PAYMENT OF RS ${amount} FOR FEES IN SMILE CARE IS : ${otp}
             note:- This OTP is valid for only 15 minutes.`
         };
 

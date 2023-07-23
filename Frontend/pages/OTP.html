@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verify OTP</title>
+    <link rel="stylesheet" href="./Styles/OTP.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="desc">
+            <h2>To Confirm Payment Please verify OTP Sent To Your Registered E-mail Id</h2>
+            <img src="https://www.zoomcar.com/build/760ee3019ff287f2caed7e40c92b1ca5.png" alt="security-pic">
+        </div>
+        <div id="verify-otp-div">
+            <p id="text">Enter OTP Here</p>
+            <form id="otp-form">
+                <input class="inputbox" id="num1" type="text" maxlength="1" pattern="[0-9]" required>
+                <input class="inputbox" id="num2" type="text" maxlength="1" pattern="[0-9]" required>
+                <input class="inputbox" id="num3" type="text" maxlength="1" pattern="[0-9]" required>
+                <input class="inputbox" id="num4" type="text" maxlength="1" pattern="[0-9]" required>
+                <input class="inputbox" id="num5" type="text" maxlength="1" pattern="[0-9]" required>
+                <input class="inputbox" id="num6" type="text" maxlength="1" pattern="[0-9]" required>
+                
+            </form>
+
+            <button id="verify-btn">Verify OTP</button>
+
+            <h2 id="errmsg"></h2>
+
+        </div>
+    </div>
+
+</body>
+<script src="./Scripts/OTP.js"></script>
+
+</html>
