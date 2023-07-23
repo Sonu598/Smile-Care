@@ -9,55 +9,7 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-/* .hamburger-menu{
-    padding-top: 50px;
-    line-height: 50px;
-    text-align: center;
-    height: 450px;
-    background-color: #fff;
-    position: absolute;
-    z-index: 10;
-    display: block;
-    left: 30%;
-    top:-100% ;
-    width: 70%;
-    transition: ease-in 0.9s;
-}
-.hamburger-menu h2:hover{
-    background-color: #38b6ffba;
-    color: #fff;
-}
-.hamburger{
-    display:none;
-    color: #fff;
-    font-size: 35px;
 
-}
-#navbar {
-    /* width: 100%; */
-    /* position: sticky; */
-    /* height: 90px; */
-    /* margin: auto; */
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #38b6ff; */
-/* } */
-
-/* #navbar>div a {
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    /* font-family: sans-serif; */
-    /* font-weight: bold;
-    font-size: 20px; */
-   
-/* } */
-
-/* #navbar>div>a:hover { */
-    /* color: rgb(0, 63, 139); */
-    /* border-bottom:solid 2px #e7eee7; */
-/* } */
 #loginBtn{
     background-color: #e7eee7;
     width: 100%;
@@ -87,16 +39,15 @@ body{
 } */
 
 /* ----body Css--- */
-.swiper-wrapper>img{ 
+.img-banner{
+    width: 100px;
+}
+/* .swiper-wrapper img{ 
     width:100%;
-    height: 480px;
-   border: 2px solid red;
-}
-.banner-container{
+    height: 340px;
+   
+} */
 
-    border: solid 1px rgb(158, 196, 211);
-    
-}
 .swiper .swiper-button-prev,.swiper .swiper-button-next{
     color: rgb(157, 152, 152);
     /* background-color: rgba(213, 222, 222, 0.629); */
@@ -118,9 +69,11 @@ body{
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     padding:20px;
     border-radius: 10px;
+    text-align: center;
    
 }
 .sec1-card  button{
+   
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -128,7 +81,9 @@ body{
     background-color: #44bece;
 }
 .sec1-card p{
-    height: 120px;
+    margin-top: 20px;
+    height: 200px;
+    line-height: 30px;
 }
 .sec2{
     width: 95%;
@@ -194,6 +149,8 @@ body{
 }
 .sec-title span{
     color: #44bece;
+    font-size: 40px;
+ 
 }
 
 .sec4-card{
@@ -226,6 +183,10 @@ a {
 /* medium Screen */
 
 @media screen and (min-width:750px) and (max-width:1120px) {
+    .sec1{
+        grid-template-columns: repeat(2,1fr);
+
+    }
     .sec3-card{
         grid-template-columns: repeat(3,1fr);
     }
@@ -239,24 +200,7 @@ a {
 
 /* small Screen */
 @media screen and (min-width:320px) and (max-width:750px) {
-    .swiper-wrapper img{ 
-        width:100%;
-        height: 340px;
-       
-    }
-    .hamburger-menu.activate{
-        display: block;       
-        top:14%;
-        transition: ease-in 0.8s;
-
-    }
-    .hamburger{
-        display: block;
-        margin-left: 40%;
-    }
-    .nav-element{
-        display: none;
-    }
+    
     .sec1-card p{
         height: 180px;
     }

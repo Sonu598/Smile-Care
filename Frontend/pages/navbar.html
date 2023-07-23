@@ -26,7 +26,7 @@
 #navbar {
     width: 100%;
     position: sticky;
-    height: 90px;
+    /* height: 90px; */
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -35,9 +35,9 @@
 }
 #logo{
     width: 160px;
-    height: 75px;
+    /* height: 75px; */
 }
-#navbar>div a,.bt {
+#navbar>div a {
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -46,9 +46,34 @@
     font-size: 23px;
 }
 
-#navbar>div>a:hover,.bt:hover {
-    color: darkred;
+#navbar>div>a:hover {
+    color:#6b7175;
     font-weight: bold;
+}
+
+.hamburger-menu{
+    padding-top: 50px;
+    line-height: 50px;
+    text-align: center;
+    height: 450px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    left: -130%;
+    /* top:-100% ; */
+    width: 70%;
+    transition: ease-in 0.6s;
+}
+.hamburger-menu div:hover{
+    background-color: #38b6ffba;
+    color: #fff;
+}
+.hamburger{
+    display:none;
+    color: #fff;
+    size: 35px;
+
 }
 
 /* **************Navbar CSS************** */
@@ -56,23 +81,40 @@
 /* **************Responsive CSS************** */
 @media only screen and (max-width: 768px) {
     /* Adjust font size for smaller screens */
-    #navbar>div a {
+    /* #navbar>div a {
         font-size: 18px;
+    } */
+}
+@media screen and (min-width:320px) and (max-width:750px) {
+   
+    .hamburger-menu.activate{
+        display: block;       
+        /* top:14%; */
+        left: 30%;
+        transition: ease-in 0.6s;
+
+    }
+    .hamburger{
+        display: block;
+        margin-left: 40%;
+    }
+    .nav-element{
+        display: none;
     }
 }
 
 @media only screen and (max-width: 450px) {
     /* Adjust font size and line height for even smaller screens */
-    #navbar>div a {
+    /* #navbar>div a {
         font-size: 16px;
         line-height: 1.4;
-    }
+    } */
 
     /* Reduce logo size for smaller screens */
-    #navbar>div:first-child a img {
+    /* #navbar>div:first-child a img {
         width: 100px;
         height: 50px;
-    }
+    } */
 }
 /* **************Responsive CSS************** */
 </style>
@@ -81,33 +123,30 @@
 <body>
     <!-- ************Navbar start here****************** -->
     <div id="navbar">
-        <div><a href="./index.html"><img id="logo" src="../images/logo.jpg" alt=""></a></div>
-        <div><a href="./aboutus.html">About Us</a></div>
-        <div><a href="./doc_list.html">Our Doctors</a></div>
-        <div><a href="./appointment.html">Appointments</a></div>
-        <div class="bt" id="signUpY"><a href="./signin.html">Login</a></div>
+        <div><a href="../index.html"><img id="logo" src="../images/logo.jpg" alt=""></a></div>
+        <div class="nav-element"><a href="./aboutus.html">About Us</a></div>
+        <div class="nav-element"><a href="./doc_list.html">Our Doctors</a></div>
+        <div class="nav-element"><a href="./appointment.html">Appointments</a></div>
+        <div class="bt nav-element"><a href="./adminlogin.html">Login</a></div>
+        <div class="hamburger"  onclick="handleHamburger()"><ion-icon name="menu" style="font-size: 40px;"></ion-icon></div>
+    </div>
+     <div class="hamburger-menu">
+
+        <div ><a href="./aboutus.html">About Us</a></div>
+        <div ><a href="./doc_list.html">Our Doctors</a></div>
+        <div ><a href="./appointment.html">Appointments</a></div>
+        <a href="./adminlogin.html"><button id="login-hamburger">Login</button></a>
+        
     </div>
     <!-- **************Navbar end here****************** -->
 </body>
 </html>
-<script>
-    let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
-// let userInfo = null
-if(userInfo){
-    console.log(userInfo);
 
-    let name = userInfo.name.split(" ")[0];
-    let div = document.getElementById("signUpY")
-    div.innerHTML = name;
-	div.className="bt"
+<script >
+    let hamburger=document.querySelector(".hamburger-menu")
+function handleHamburger(){
+  console.log("hello")
+  hamburger.classList.toggle("activate")
 
-    div.addEventListener("click" , ()=>{
-        window.location.href ="./profile.html"
-    })
-}else{
-    let div = document.getElementById("signUpY")
-    div.addEventListener("click" , ()=>{
-        window.location.href = "./signin.html"
-    })
 }
 </script>
