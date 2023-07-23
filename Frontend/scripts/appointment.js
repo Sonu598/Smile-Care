@@ -2,23 +2,26 @@ $(function () {
     $('#navbar').load('navbar.html');
     $('#foot').load('footer.html');
 }) 
-    
+
+ 
 
  document.addEventListener("DOMContentLoaded", function() {
-  let doc=JSON.parse(localStorage.getItem("doc_name"));
+  let doc=localStorage.getItem("Doc_name");
+  let fee=localStorage.getItem("amount");
 
   const doctorname = document.getElementById("doctorId");
-  doctorname.innerText=doc
+  doctorname.value=doc
 
-  const username = document.getElementById("userId");
-  doctorname.innerText=username
+  const fees = document.getElementById("fees");
+  fees.value=fee
 
-  let fee=JSON.parse(localStorage.getItem("amount"));
+  
   console.log(doc);
   const appointmentForm = document.getElementById("appointmentForm");
 
   appointmentForm.addEventListener("submit", function(event) {
-    alert("okkkkkkkkkkkkkkkkk")
+    alert("Booking Successfull")
+    
 
       event.preventDefault();
 
@@ -52,5 +55,7 @@ $(function () {
       .catch(error => {
           console.error("Error:", error);
       });
+
+      window.location.href="../pages/payment.html"
   });
 });
