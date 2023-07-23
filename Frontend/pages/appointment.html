@@ -28,7 +28,7 @@
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 45px;
     background-color: #38b6ff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -54,7 +54,7 @@ label{
 
 input, button{
     margin-top: 5px;
-    padding: 15px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -94,10 +94,10 @@ button:hover{
             <div class="container">
                 <h1>Book an Appointment</h1>
                 <form id="appointmentForm">
-                    <label for="doctorId">Doctor ID:</label>
+                    <label for="doctorId">Doctor Name:</label>
                     <input type="text" id="doctorId" required>
         
-                    <label for="userId">User ID:</label>
+                    <label for="userId">Patient Name:</label>
                     <input type="text" id="userId" required>
         
                     <label for="time">Time:</label>
@@ -105,6 +105,9 @@ button:hover{
         
                     <label for="date">Date:</label>
                     <input type="date" id="date" required>
+
+                    <label for="fees">Fees:</label>
+                    <input type="text" id="fees" required>
         
                     <button type="submit">Book now</button>
                 </form>
@@ -112,7 +115,7 @@ button:hover{
         </div>
     </div>
 
-    <div id="footer"></div>
+    <div id="foot"></div>
 </body>
 </html>
 
