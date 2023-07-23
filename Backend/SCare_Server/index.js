@@ -12,6 +12,7 @@ const app = express();
 const http = require("http");
 const {Server} = require("socket.io");
 const { scanRouter } = require('./routes/scanroute');
+const { payRouter } = require('./routes/paymentroute');
 const httpServer = http.createServer(app);
 
 const io = new Server(httpServer);
@@ -25,6 +26,7 @@ app.use('/doctor', doctorRouter);
 app.use("/appointment",appointmentRouter);
 app.post('/logout', logoutLogic);
 app.use('/scan',scanRouter);
+app.use('/pay',payRouter);
 
 app.get('*', (req, res)=>{
     res.send('<h1>Page Not Found</h1>')
