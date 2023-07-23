@@ -87,10 +87,10 @@ body{
 } */
 
 /* ----body Css--- */
-.swiper-wrapper img{ 
+.swiper-wrapper>img{ 
     width:100%;
     height: 480px;
-   
+   border: 2px solid red;
 }
 .banner-container{
 

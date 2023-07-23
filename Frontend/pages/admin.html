@@ -5,12 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smile Care - Admin</title>
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="../styles/admin.css">
 </head>
+<style>
+    /* **************Navbar CSS************** */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* body {
+        background-color: rgb(250, 240, 227);
+    } */
+    
+    #navbar {
+        width: 100%;
+        position: sticky;
+        height: 90px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #38b6ff;
+    }
+    #logo{
+        width: 160px;
+        height: 75px;
+    }
+    #navbar>div a,.bt {
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+    
+    #navbar>div>a:hover,.bt:hover {
+        color: darkred;
+        font-weight: bold;
+    }
+    
+    /* **************Navbar CSS************** */
+    
+    /* **************Responsive CSS************** */
+    @media only screen and (max-width: 768px) {
+        /* Adjust font size for smaller screens */
+        #navbar>div a {
+            font-size: 18px;
+        }
+    }
+    
+    @media only screen and (max-width: 450px) {
+        /* Adjust font size and line height for even smaller screens */
+        #navbar>div a {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+    
+        /* Reduce logo size for smaller screens */
+        #navbar>div:first-child a img {
+            width: 100px;
+            height: 50px;
+        }
+    }
+    /* **************Responsive CSS************** */
+    </style>
 <body>
-    <header></header>
+    <header>
+        <div id="navbar">
+            <div><a href="./index.html"><img id="logo" src="../images/logo.jpg" alt=""></a></div>
+            <div class="bt" id="signUpY"><a href="./index.html">Log Out</a></div>
+        </div>
+    </header>
     <div id="body">
     <div class="container">
         <div class="tabs">
@@ -135,9 +203,4 @@
     </div>
 </body>
 </html>
-<script>
-    $(function () {
-        $('header').load('navbar.html');
-    }) 
-</script>
 <script src="../scripts/admin.js"></script>

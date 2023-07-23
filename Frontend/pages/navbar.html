@@ -37,7 +37,7 @@
     width: 160px;
     height: 75px;
 }
-#navbar>div a {
+#navbar>div a,.bt {
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -46,7 +46,7 @@
     font-size: 23px;
 }
 
-#navbar>div>a:hover {
+#navbar>div>a:hover,.bt:hover {
     color: darkred;
     font-weight: bold;
 }
@@ -85,8 +85,29 @@
         <div><a href="./aboutus.html">About Us</a></div>
         <div><a href="./doc_list.html">Our Doctors</a></div>
         <div><a href="./appointment.html">Appointments</a></div>
-        <div class="bt"><a href="./adminlogin.html">Login</a></div>
+        <div class="bt" id="signUpY"><a href="./signin.html">Login</a></div>
     </div>
     <!-- **************Navbar end here****************** -->
 </body>
 </html>
+<script>
+    let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
+// let userInfo = null
+if(userInfo){
+    console.log(userInfo);
+
+    let name = userInfo.name.split(" ")[0];
+    let div = document.getElementById("signUpY")
+    div.innerHTML = name;
+	div.className="bt"
+
+    div.addEventListener("click" , ()=>{
+        window.location.href ="./profile.html"
+    })
+}else{
+    let div = document.getElementById("signUpY")
+    div.addEventListener("click" , ()=>{
+        window.location.href = "./signin.html"
+    })
+}
+</script>

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://img.freepik.com/premium-photo/blue-paper-with-white-background_839976-213.jpg?w=1060");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.anchor {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.anchor a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+.anchor a:hover {
+    color: rgb(248, 178, 178);
+    transform: scale(1.1);
+}
+
+.userLoginRegister {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#userLogin {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+#userLogin :hover {
+    border: 2px solid rgb(242, 30, 30);
+    color: rgb(242, 30, 30);
+}
+
+.mainContainer{
+    height: 80vh;
+    display: flex;
+}
+
+.sidebar{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 2px solid grey;
+}
+.sidebar img{
+    height: 150px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+}
+.sidebar a{
+    text-decoration: none;
+    color: grey;
+    font-weight: bolder;
+    font-size: large;
+}
+.sidebar button{
+    /* height: 50px; */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+    /* font-size: large; */
+    cursor: pointer;
+}
+#logout{
+    background-color: rgb(207, 145, 126);
+    transition: all .4s ease-in-out;
+}
+#logout:hover{
+    background-color: rgb(255, 64, 64);
+    color: aliceblue;
+}
+
+#delAcc{
+    box-sizing: border-box;
+    color: white;
+    background-color: red;
+    transition: all .4s ease-in-out;
+}
+#delAcc:hover{
+    border: 1px solid red;
+    background-color: rgba(207, 82, 51, 0.779);
+
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid grey;
+}
+
+/* Right Side */
+.rightInfo {
+    padding: 0px 10px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-y: scroll;
+}
+.rightInfo::-webkit-scrollbar{
+    display: none;
+    width: 1px;
+    background-color: #ffffff;
+}
+.rightInfo:hover::-webkit-scrollbar{
+    display: block;
+}
+.rightInfo::-webkit-scrollbar-thumb{
+    background-color: #000000;
+    border-radius: 10px;
+}
+.rightInfo>span{
+    margin-top: 50px;
+    /* margin-top: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rightInfo>span>label{
+    font-weight: bolder;
+    border-bottom: 2px solid grey;
+    align-self: baseline;
+}
+.rightInfo>span>span{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rightInfo>span>span>button{
+    padding: 5px 20px;
+    background-color: transparent ;
+    border-radius: 8px;
+    font-weight: bolder;
+}
+.active{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+
+.editNameSection>input,.editEmailSection>input,.editPassSection>input{
+    position: relative;
+    left: -60px;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #000;
+    outline: none;
+    border: 0px;
+    border-bottom: 2px solid ;
+}
+.editNameSection>button,.editEmailSection>button,.editPassSection>button{
+    display: block;
+    position: relative;
+    top: -33px;
+    left: 177px;
+    padding: 5px 10px;
+    background-color: transparent ;
+    border-radius: 8px;
+    font-weight: bolder;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Profile</title>
+
+</head>
+
+<body>
+    <header></header>
+    <div class="mainContainer">
+        <div class="sidebar">
+            <div class="userInfo" id="userInfo">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-Transparent.png" alt="user">
+                <h2 id="userName"></h2>
+            </div>
+            <a href="#">Profile</a>
+            <a href="#">Invite</a>
+            <a href="#">All Rooms</a>
+            <a href="#">Your Subscription</a>
+
+            <button id="logout">Log Out</button>
+            <button id="delAcc">Delete Account</button>
+        </div>
+        <div class="rightInfo">
+            <h1>User Information</h1>
+            <hr>
+            <span>
+                <label for="name">Name</label>
+                <span>
+                    <p id="userName-p"></p>
+                    <button id="editName">Edit</button>
+                </span>
+                <div class="editNameSection hidden">
+                    <input type="text" placeholder="Enter your name">
+                    <button id="editNameSubmit">Done</button>
+                </div>
+            </span>
+
+            <span>
+                <label for="email">Email</label>
+                <span>
+                    <p id="userEmail-p"></p>
+                    <button id="editEmail">Edit</button>
+                </span>
+                <div class="editEmailSection hidden">
+                    <input type="email" placeholder="Enter your Email">
+                    <button id="editNameSubmit">Done</button>
+                </div>
+            </span>
+            <span>
+                <label for="pass">Password</label>
+                <span>
+                    <p id="userPass-p">******</p>
+                    <button id="editPass">Edit</button>
+                </span>
+                <div class="editPassSection hidden">
+                    <input type="password" placeholder="Enter your new Password">
+                    <button id="editNameSubmit">Done</button>
+                </div>
+            </span>
+        </div>
+    </div>
+    <footer style="margin-top: 100px;"></footer>
+</body>
+<script src="../scripts/profile.js"></script>
+</html>
+<script>
+    $(function () {
+        $('header').load('nav.html');
+    }) 
+</script>
+  
+<script>
+    $(function () {
+        $('footer').load('footer.html');
+    }) 
+</script>

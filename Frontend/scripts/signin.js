@@ -95,7 +95,7 @@ function singUpFunction(){
         password: passwords.value,
         name: name.value
     }
-    fetch("/users/register",{
+    fetch("http://localhost:2015/patient/register",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -180,7 +180,7 @@ function loginFunction(){
 
     console.log(newUser)
 
-    fetch("/users/login",{
+    fetch("http://localhost:2015/patient/login",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -193,7 +193,7 @@ function loginFunction(){
         let user=res.user
         user.type="free"
         localStorage.setItem("userInfo",JSON.stringify(user))
-        window.location.href = "../pages/payment.html"
+        window.location.href = "../pages/index.html"
     })
     .catch(err=>{
         console.log(err)

@@ -1,4 +1,4 @@
-let contain= document.getElementById("content")
+
 
 fetch("http://localhost:2015/doctor/allDoctor")
   .then((res) => {
@@ -7,8 +7,8 @@ fetch("http://localhost:2015/doctor/allDoctor")
   .then((data) => {
     TutorsDomain(data)
   });
- let data=[{name:"amit", fees:30}]
- TutorsDomain(data)
+//  let data=[{name:"amit", fees:30}]
+//  TutorsDomain(data)
 
 function TutorsDomain(data) {
   contain.innerHTML = `${data
@@ -25,21 +25,20 @@ function doc_card(element){
           <h1 id="naam">${element.name} <span style="font-size:x-small;">( MBBS )</span></h1>
           <p>An experience of ${element.experience} years from ${element.location}</p>
           <h4>Fees : <span  id="paise">${element.fees}</span>/-</h4>
-          <a href="./appointment.html"><button id="btn">Book Appointment</button></a>
+          <a href="./appointment.html"><button class="btn">Book Appointment</button></a>
       
   </div>
-</div>
-
-      `;
+</div>`;
 }
-
-
-let btn=document.getElementById("btn")
-let naam=document.getElementById("naam").innerText
-let paise=document.getElementById("paise").innerText
-
-btn.addEventListener("click",()=>{
- localStorage.setItem("Doc_name",naam)
- localStorage.setItem("amount",paise)
-})
-
+ // Event delegation: Listen for click events on the parent container (content)
+ const contain = document.getElementById("content");
+ contain.addEventListener("click", (event) => {
+   // Check if the clicked element has the class "btn"
+   if (event.target.classList.contains("btn")) {
+     const naam = cardElement.querySelector("#naam").innerText;
+     const paise = cardElement.querySelector("#paise").innerText;
+     localStorage.setItem("Doc_name", naam);
+     localStorage.setItem("amount", paise);
+     window.location.href="../pages/appointment.html";
+   }
+ });

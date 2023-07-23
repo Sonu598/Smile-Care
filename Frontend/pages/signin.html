@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextMate - Sign Up</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="../styles/signin.css">
 </head>
 <body>
+    <header></header>
     <div class="main">
         <div class="form-box">
             <div class="button-box">
@@ -31,8 +33,8 @@
                     <button id="google-auth-btn" type="submit" class="submit-btn"><img src="../images/google.png" alt="">Sign In With Google</button>
                 </div>
                 <div id="other-logins">
-                    <a href=""> Login as Doctor ?</a>
-                    <a href=""> Login as Admin ?</a>
+                    <a href="./doctorslogin.html"> Login as Doctor ?</a>
+                    <a href="./adminlogin.html"> Login as Admin ?</a>
                 </div>
             </form>
             <form id="signup" class="input-group">
@@ -74,3 +76,8 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="../scripts/signin.js"></script>
+<script>
+    $(function () {
+        $('header').load('navbar.html');
+    }) 
+  </script>
